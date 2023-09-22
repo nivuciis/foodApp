@@ -2,10 +2,14 @@ package com.foodApp.models;
 
 import java.io.Serializable;
 
+import org.hibernate.annotations.CollectionIdMutability;
+
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.Lob;
 
 @Entity
 public class food implements Serializable{
@@ -16,8 +20,10 @@ public class food implements Serializable{
     private long id;
 
     private String name;
-    private String image;
     private Double price;
+    @Lob
+    @Column(name = "image")
+    private byte[] image;
 
     public long getId(){
         return id;
@@ -28,7 +34,7 @@ public class food implements Serializable{
     public String getName(){
         return this.name;
     }
-    public String getImage(){
+    public byte[] getImage(){
         return this.image;
     }
     public Double getPrice(){
@@ -38,7 +44,7 @@ public class food implements Serializable{
     public void setName(String name){
         this.name = name;
     }
-    public void setImage(String image){
+    public void setImage(byte[] image){
         this.image = image;
     }
     public void setPrice(Double price){
