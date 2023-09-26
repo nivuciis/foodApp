@@ -1,14 +1,13 @@
-package com.foodApp;
+package com.dev.foodapp;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class FoodAppApplication {
+public class FoodappApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(FoodAppApplication.class, args);
+		SpringApplication.run(FoodappApplication.class, args);
 	}
 
 }
- 
