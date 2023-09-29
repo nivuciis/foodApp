@@ -9,9 +9,7 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
-import lombok.AccessLevel;
 import lombok.Data;
-import lombok.Setter;
 
 @Entity
 @Table(name = "user_permission")
@@ -23,14 +21,10 @@ public class UserPermission {
 
     @ManyToOne
     @JsonIgnore
-    @JoinColumn(name = "id_user")
-    @Setter(value = AccessLevel.NONE)
+    @JoinColumn(name = "id_user", nullable = false)
     private User user;
-    public void setUser(User u){
-        this.user = u;
-    }
 
     @ManyToOne
-    @JoinColumn(name = "id_perm")
+    @JoinColumn(name = "id_perm", nullable = false)
     private Permission perm;
 }

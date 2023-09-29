@@ -28,11 +28,11 @@ public class User {
     private String endereço;
     private String cep;
 
-    @OneToMany(mappedBy = "user", orphanRemoval = true, cascade = {CascadeType.PERSIST, CascadeType.MERGE})
     @Setter(value = AccessLevel.NONE)
+    @OneToMany(mappedBy = "user", orphanRemoval = true, cascade = {CascadeType.PERSIST, CascadeType.MERGE})
     private List<UserPermission> userPerm;
 
-    public void SetUserPermission(List<UserPermission> userP){
+    public void setUserPerm(List<UserPermission> userP){
         for(UserPermission p:userP){
             p.setUser(this);
         }
