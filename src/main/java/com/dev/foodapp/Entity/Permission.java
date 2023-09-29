@@ -8,15 +8,12 @@ import jakarta.persistence.Table;
 import lombok.Data;
 
 @Entity
-@Table(name = "food")
+@Table(name = "permission")
 @Data
-public class Food {
+public class Permission {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-
+    
     private String name;
-    private String description;
-    private Double price;
-
 }
