@@ -24,8 +24,8 @@ public class User {
     private String name;
     private String cpf;
     private String email;
-    private String senha;
-    private String endereço;
+    private String password;
+    private String adress;
     private String cep;
 
     @Setter(value = AccessLevel.NONE)
