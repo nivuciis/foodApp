@@ -1,5 +1,6 @@
 package com.dev.foodapp.Entity;
 
+import java.util.Date;
 import java.util.List;
 
 import jakarta.persistence.CascadeType;
@@ -9,6 +10,8 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
+import jakarta.persistence.Temporal;
+import jakarta.persistence.TemporalType;
 import lombok.AccessLevel;
 import lombok.Data;
 import lombok.Setter;
@@ -25,6 +28,9 @@ public class User {
     private String cpf;
     private String email;
     private String password;
+    private String passRecovery;
+    @Temporal(TemporalType.TIMESTAMP)
+    private Date valityCode; 
     private String adress;
     private String cep;
 
